@@ -3,7 +3,7 @@
 # Statistical Modelling with Python
 
 ## :dart: Project/Goals
-There were 4 main objectives in given project:
+There were 4 main objectives in given project [^1]:
 - [x] Connection to the City Bikes API to retrieve bike stations for a specific city.
 - [x] Connection to Foursquare and Yelp APIs to retrieve points of interests (POIs) around each bike station.
 - [x] Data Parsing, Joining and Exploration of the data retrieved via APIs to gain insights to aid in model building and prediction.
@@ -143,3 +143,5 @@ If I had more time, I would:
 - **Explore other POIs** such as universities and their relationship to bike usage as well as the presence of parks around bike stations.
 - **Create a Time series** exploring seasonality in bike usage.
 - Add more fun facts (have you seen any by now? :clown_face:)
+
+  [^1]: Disclaimer: this assignment is part of a final Python project at Lighthouse Labs
