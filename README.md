@@ -1,6 +1,6 @@
 <img src="images/graphic.png" width="500" style="display: block; margin: 0;" />
 
-# Statistical Modelling with Python
+# Statistical Modeling with Python
 
 ## :dart: Project/Goals
 There were 4 main objectives in given project [^1]:
