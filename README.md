@@ -21,9 +21,9 @@ A function was created and utilized to request for POI information from Yelp and
 
 Quality of both APIs was assessed based on retrieved data. 
 
-As a part of an experiment, I compared proximity of bike stations to museums in Oslo. In order to do that, I loop through the data to find closesst POI and sort the results by distance. Radius limit remains the same for both APIs (1000 meters).
+As a part of an experiment, I compared proximity of bike stations to museums in Oslo. In order to do that, I loop through the data to find closest POI and sort the results by distance. Radius limit remains the same for both APIs (1000 meters).
 
-In the case of Yelp, API daily call limit was reached - probably due to multiple calls per station, or there might be some redundant calls in the code. Steps taken to mitigate this issue: code review, handling error, temporary solution (request had to be made on separate days).
+In the case of Yelp, API daily call limit was reached - at first I thought it was probably due to multiple calls per station (despite a set limit of 50), or there might be some redundant calls in the code. Steps taken to mitigate this issue: code review, handling error (decreasing the limit to 1), temporary solution (request had to be made on separate days).
 
 Both Foursquare and Yelp provided complete data for museums, with zero missing values. However, there are some differences in restaurants & bars data. Yelp has a **staggering 12,915 entries**, with Foursquare returning a modest 263 results.
 
