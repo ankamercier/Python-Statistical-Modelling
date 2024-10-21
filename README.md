@@ -25,7 +25,7 @@ As a part of an experiment, I compared proximity of bike stations to museums in 
 
 In the case of Yelp, API daily call limit was reached - at first I thought it was probably due to multiple calls per station (despite a set limit of 50), or there might be some redundant calls in the code. Steps taken to mitigate this issue: code review, handling error (decreasing the limit to 1), temporary solution (request had to be made on separate days).
 
-Both Foursquare and Yelp provided complete data for museums, with zero missing values. However, there are some differences in restaurants & bars data. Yelp has a **staggering 12,915 entries**, with Foursquare returning a modest 263 results.
+Both Foursquare and Yelp provided complete data for museums, with zero missing values. However, there are some differences in restaurants & bars data. Yelp has a **staggering 12,915 entries** (due to wrong limit of 1 closest POI result per station), with Foursquare returning expected 263 results.
 
 <details>
 <summary>expand for more details</summary>
@@ -54,6 +54,8 @@ A **list of top 10 restaurants & bars in Oslo** (bike-accessible) was generated 
 | Gioia | 453.52 | 2 | 5.0 |
 | Wu Sushi | 525.03 | 3 | 5.0 |
 | Emilio's Vinbar | 247.59 | 3 | 5.0 |
+
+Curiously, while most of them are expensive, third one is a cheap kebab place. I checked Einer, and it’s permanently closed now. Which means data from API was not reliable considering that they include all restaurants, both active and closed.
 
 > [!NOTE]
 > Table was slightly modified for README file, a full version with all columns can be found in EDA notebook.
@@ -115,7 +117,7 @@ p-values indicate that the whole model is not statistically significant, conside
 
 **Coefficients:**
 Both `avg_restaurant_price` and `avg_restaurant_rating` are both 0, which is unusual, but considering our previous problem with a database, we know that further cleaning is required for this to work.
-Coefficient for `nearby_restaurant_count` is 0.9334, suggesting that for each additional nearby restaurant, we expect an increse of about 0.93 available bikes, but there is no statistical significance here.
+Coefficient for `nearby_restaurant_count` is 0.9334, suggesting that for each additional nearby restaurant, we expect an increase of about 0.93 available bikes, but there is no statistical significance here.
 
 ```
 Coefficients:
